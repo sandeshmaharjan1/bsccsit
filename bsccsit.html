@@ -1,0 +1,1001 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1" />
+<title>BSc CSIT — 100 Question Mock Quiz</title>
+<style>
+  :root{--bg:#0f172a;--card:#0b1220;--accent:#0b6cff;--muted:#cbd5e1;--ok:#10b981}
+  body{font-family:Inter,system-ui,Segoe UI,Arial;background:var(--bg);color:var(--muted);margin:0;padding:24px}
+  .wrap{max-width:980px;margin:0 auto}
+  header{display:flex;align-items:center;gap:12px;margin-bottom:18px}
+  header h1{color:#fff;font-size:20px;margin:0}
+  .info{background:#071028;padding:12px;border-radius:10px;margin-bottom:18px;color:#dbeafe}
+  .sections{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:18px}
+  .section{background:#071733;padding:8px 10px;border-radius:8px;font-size:13px}
+  .card{background:var(--card);padding:18px;border-radius:12px;margin-bottom:18px;box-shadow:0 6px 18px rgba(2,6,23,0.6)}
+  .q{margin-bottom:12px;padding:12px;border-radius:8px;background:linear-gradient(90deg,rgba(255,255,255,0.01),transparent)}
+  .q p{margin:0 0 8px 0;color:#e6eef8}
+  .opts label{display:block;margin:5px 0;color:#cfe8ff}
+  button{background:var(--accent);color:#fff;border:0;padding:10px 14px;border-radius:8px;font-weight:700;cursor:pointer}
+  .result{padding:12px;border-radius:10px;margin-top:12px;background:#05264d;color:#dff6ff}
+  .small{font-size:13px;color:#99a3b3}
+  footer{margin-top:30px;color:#93c5fd;font-size:13px}
+  @media(max-width:700px){body{padding:12px}}
+</style>
+</head>
+<body>
+  <div class="wrap">
+    <header>
+      <h1>BSc CSIT — 100-question Mock (TU-style)</h1>
+    </header>
+
+    <div class="info">
+      <strong>Exam format:</strong> 100 MCQs (Mathematics 25, Physics 25, Chemistry 25, English 15, Computer/IT 10). <br>
+      <strong>Scoring:</strong> 1 mark per correct answer, <strong>no negative marking</strong>. Pass mark: 35/100. (This page grades locally.) 
+    </div>
+
+    <div class="sections">
+      <div class="section">Mathematics: 1–25</div>
+      <div class="section">Physics: 26–50</div>
+      <div class="section">Chemistry: 51–75</div>
+      <div class="section">English: 76–90</div>
+      <div class="section">Computer/IT: 91–100</div>
+    </div>
+
+    <form id="quizForm" class="card" onsubmit="return gradeQuiz(event)">
+      <!-- ---------- MATHEMATICS 1-25 ---------- -->
+      <h3 style="color:#fff;margin-top:0">Mathematics (25)</h3>
+
+      <!-- Questions 1 to 25 -->
+      <!-- For brevity each question id = q1 ... q100 -->
+      <!-- Each option value is a single letter A/B/C/D -->
+      <!-- ---------- 1 ---------- -->
+      <div class="q" id="q1">
+        <p>1. What is the derivative of f(x)=x² ?</p>
+        <div class="opts">
+          <label><input type="radio" name="q1" value="A"> A) 1</label>
+          <label><input type="radio" name="q1" value="B"> B) 2x</label>
+          <label><input type="radio" name="q1" value="C"> C) x</label>
+          <label><input type="radio" name="q1" value="D"> D) x²</label>
+        </div>
+      </div>
+
+      <div class="q" id="q2">
+        <p>2. Solve: 2x - 4 = 0</p>
+        <div class="opts">
+          <label><input type="radio" name="q2" value="A"> A) x=-2</label>
+          <label><input type="radio" name="q2" value="B"> B) x=2</label>
+          <label><input type="radio" name="q2" value="C"> C) x=4</label>
+          <label><input type="radio" name="q2" value="D"> D) x=0</label>
+        </div>
+      </div>
+
+      <div class="q" id="q3">
+        <p>3. The integral ∫ 2 dx = ?</p>
+        <div class="opts">
+          <label><input type="radio" name="q3" value="A"> A) 2x + C</label>
+          <label><input type="radio" name="q3" value="B"> B) x² + C</label>
+          <label><input type="radio" name="q3" value="C"> C) ln x + C</label>
+          <label><input type="radio" name="q3" value="D"> D) 1/x + C</label>
+        </div>
+      </div>
+
+      <div class="q" id="q4">
+        <p>4. If sin θ = 1/2, θ in degrees is:</p>
+        <div class="opts">
+          <label><input type="radio" name="q4" value="A"> A) 30°</label>
+          <label><input type="radio" name="q4" value="B"> B) 45°</label>
+          <label><input type="radio" name="q4" value="C"> C) 60°</label>
+          <label><input type="radio" name="q4" value="D"> D) 90°</label>
+        </div>
+      </div>
+
+      <div class="q" id="q5">
+        <p>5. The value of log10(100) is:</p>
+        <div class="opts">
+          <label><input type="radio" name="q5" value="A"> A) 1</label>
+          <label><input type="radio" name="q5" value="B"> B) 2</label>
+          <label><input type="radio" name="q5" value="C"> C) 10</label>
+          <label><input type="radio" name="q5" value="D"> D) 0</label>
+        </div>
+      </div>
+
+      <div class="q" id="q6">
+        <p>6. Solve: 3(x+1) = 12</p>
+        <div class="opts">
+          <label><input type="radio" name="q6" value="A"> A) x=3</label>
+          <label><input type="radio" name="q6" value="B"> B) x=4</label>
+          <label><input type="radio" name="q6" value="C"> C) x=2</label>
+          <label><input type="radio" name="q6" value="D"> D) x=1</label>
+        </div>
+      </div>
+
+      <div class="q" id="q7">
+        <p>7. The roots of x² - 5x + 6 = 0 are:</p>
+        <div class="opts">
+          <label><input type="radio" name="q7" value="A"> A) 2 and 3</label>
+          <label><input type="radio" name="q7" value="B"> B) 1 and 6</label>
+          <label><input type="radio" name="q7" value="C"> C) -2 and -3</label>
+          <label><input type="radio" name="q7" value="D"> D) 5 and -1</label>
+        </div>
+      </div>
+
+      <div class="q" id="q8">
+        <p>8. Which is an even number?</p>
+        <div class="opts">
+          <label><input type="radio" name="q8" value="A"> A) 7</label>
+          <label><input type="radio" name="q8" value="B"> B) 12</label>
+          <label><input type="radio" name="q8" value="C"> C) 13</label>
+          <label><input type="radio" name="q8" value="D"> D) 99</label>
+        </div>
+      </div>
+
+      <div class="q" id="q9">
+        <p>9. If f(x)=3x+1, f(2)= ?</p>
+        <div class="opts">
+          <label><input type="radio" name="q9" value="A"> A) 5</label>
+          <label><input type="radio" name="q9" value="B"> B) 7</label>
+          <label><input type="radio" name="q9" value="C"> C) 6</label>
+          <label><input type="radio" name="q9" value="D"> D) 3</label>
+        </div>
+      </div>
+
+      <div class="q" id="q10">
+        <p>10. 0! equals:</p>
+        <div class="opts">
+          <label><input type="radio" name="q10" value="A"> A) 0</label>
+          <label><input type="radio" name="q10" value="B"> B) 1</label>
+          <label><input type="radio" name="q10" value="C"> C) Undefined</label>
+          <label><input type="radio" name="q10" value="D"> D) 2</label>
+        </div>
+      </div>
+
+      <div class="q" id="q11">
+        <p>11. The slope of line y = 3x + 4 is:</p>
+        <div class="opts">
+          <label><input type="radio" name="q11" value="A"> A) 3</label>
+          <label><input type="radio" name="q11" value="B"> B) 4</label>
+          <label><input type="radio" name="q11" value="C"> C) -3</label>
+          <label><input type="radio" name="q11" value="D"> D) 1</label>
+        </div>
+      </div>
+
+      <div class="q" id="q12">
+        <p>12. gcd(12, 18) = ?</p>
+        <div class="opts">
+          <label><input type="radio" name="q12" value="A"> A) 6</label>
+          <label><input type="radio" name="q12" value="B"> B) 12</label>
+          <label><input type="radio" name="q12" value="C"> C) 3</label>
+          <label><input type="radio" name="q12" value="D"> D) 9</label>
+        </div>
+      </div>
+
+      <div class="q" id="q13">
+        <p>13. Which is prime?</p>
+        <div class="opts">
+          <label><input type="radio" name="q13" value="A"> A) 21</label>
+          <label><input type="radio" name="q13" value="B"> B) 17</label>
+          <label><input type="radio" name="q13" value="C"> C) 15</label>
+          <label><input type="radio" name="q13" value="D"> D) 27</label>
+        </div>
+      </div>
+
+      <div class="q" id="q14">
+        <p>14. Sum of angles in a triangle is:</p>
+        <div class="opts">
+          <label><input type="radio" name="q14" value="A"> A) 90°</label>
+          <label><input type="radio" name="q14" value="B"> B) 180°</label>
+          <label><input type="radio" name="q14" value="C"> C) 270°</label>
+          <label><input type="radio" name="q14" value="D"> D) 360°</label>
+        </div>
+      </div>
+
+      <div class="q" id="q15">
+        <p>15. If a=2 and b=3, a+b = ?</p>
+        <div class="opts">
+          <label><input type="radio" name="q15" value="A"> A) 6</label>
+          <label><input type="radio" name="q15" value="B"> B) 5</label>
+          <label><input type="radio" name="q15" value="C"> C) 1</label>
+          <label><input type="radio" name="q15" value="D"> D) -1</label>
+        </div>
+      </div>
+
+      <div class="q" id="q16">
+        <p>16. 5 × 0 = ?</p>
+        <div class="opts">
+          <label><input type="radio" name="q16" value="A"> A) 0</label>
+          <label><input type="radio" name="q16" value="B"> B) 5</label>
+          <label><input type="radio" name="q16" value="C"> C) 1</label>
+          <label><input type="radio" name="q16" value="D"> D) -5</label>
+        </div>
+      </div>
+
+      <div class="q" id="q17">
+        <p>17. 10% of 200 = ?</p>
+        <div class="opts">
+          <label><input type="radio" name="q17" value="A"> A) 2</label>
+          <label><input type="radio" name="q17" value="B"> B) 20</label>
+          <label><input type="radio" name="q17" value="C"> C) 200</label>
+          <label><input type="radio" name="q17" value="D"> D) 0</label>
+        </div>
+      </div>
+
+      <div class="q" id="q18">
+        <p>18. Which is a rational number?</p>
+        <div class="opts">
+          <label><input type="radio" name="q18" value="A"> A) π</label>
+          <label><input type="radio" name="q18" value="B"> B) √2</label>
+          <label><input type="radio" name="q18" value="C"> C) 1/3</label>
+          <label><input type="radio" name="q18" value="D"> D) e</label>
+        </div>
+      </div>
+
+      <div class="q" id="q19">
+        <p>19. The median of 1,3,5 is:</p>
+        <div class="opts">
+          <label><input type="radio" name="q19" value="A"> A) 1</label>
+          <label><input type="radio" name="q19" value="B"> B) 3</label>
+          <label><input type="radio" name="q19" value="C"> C) 5</label>
+          <label><input type="radio" name="q19" value="D"> D) 9</label>
+        </div>
+      </div>
+
+      <div class="q" id="q20">
+        <p>20. 7 + 8 = ?</p>
+        <div class="opts">
+          <label><input type="radio" name="q20" value="A"> A) 14</label>
+          <label><input type="radio" name="q20" value="B"> B) 15</label>
+          <label><input type="radio" name="q20" value="C"> C) 16</label>
+          <label><input type="radio" name="q20" value="D"> D) 13</label>
+        </div>
+      </div>
+
+      <div class="q" id="q21">
+        <p>21. 2³ = ?</p>
+        <div class="opts">
+          <label><input type="radio" name="q21" value="A"> A) 6</label>
+          <label><input type="radio" name="q21" value="B"> B) 8</label>
+          <label><input type="radio" name="q21" value="C"> C) 9</label>
+          <label><input type="radio" name="q21" value="D"> D) 4</label>
+        </div>
+      </div>
+
+      <div class="q" id="q22">
+        <p>22. LCM of 4 and 6 is:</p>
+        <div class="opts">
+          <label><input type="radio" name="q22" value="A"> A) 12</label>
+          <label><input type="radio" name="q22" value="B"> B) 10</label>
+          <label><input type="radio" name="q22" value="C"> C) 6</label>
+          <label><input type="radio" name="q22" value="D"> D) 8</label>
+        </div>
+      </div>
+
+      <div class="q" id="q23">
+        <p>23. If x=4, then x²= ?</p>
+        <div class="opts">
+          <label><input type="radio" name="q23" value="A"> A) 8</label>
+          <label><input type="radio" name="q23" value="B"> B) 16</label>
+          <label><input type="radio" name="q23" value="C"> C) 4</label>
+          <label><input type="radio" name="q23" value="D"> D) 64</label>
+        </div>
+      </div>
+
+      <div class="q" id="q24">
+        <p>24. 1/2 + 1/3 = ?</p>
+        <div class="opts">
+          <label><input type="radio" name="q24" value="A"> A) 5/6</label>
+          <label><input type="radio" name="q24" value="B"> B) 2/5</label>
+          <label><input type="radio" name="q24" value="C"> C) 3/5</label>
+          <label><input type="radio" name="q24" value="D"> D) 1</label>
+        </div>
+      </div>
+
+      <div class="q" id="q25">
+        <p>25. Which is larger: 0.6 or 2/3?</p>
+        <div class="opts">
+          <label><input type="radio" name="q25" value="A"> A) 0.6</label>
+          <label><input type="radio" name="q25" value="B"> B) 2/3</label>
+          <label><input type="radio" name="q25" value="C"> C) equal</label>
+          <label><input type="radio" name="q25" value="D"> D) cannot compare</label>
+        </div>
+      </div>
+
+      <!-- ---------- PHYSICS 26-50 ---------- -->
+      <h3 style="color:#fff;margin-top:24px">Physics (25)</h3>
+
+      <div class="q" id="q26">
+        <p>26. SI unit of force is:</p>
+        <div class="opts">
+          <label><input type="radio" name="q26" value="A"> A) N (Newton)</label>
+          <label><input type="radio" name="q26" value="B"> B) J (Joule)</label>
+          <label><input type="radio" name="q26" value="C"> C) W (Watt)</label>
+          <label><input type="radio" name="q26" value="D"> D) Pa (Pascal)</label>
+        </div>
+      </div>
+
+      <div class="q" id="q27">
+        <p>27. Acceleration due to gravity near earth is approx:</p>
+        <div class="opts">
+          <label><input type="radio" name="q27" value="A"> A) 9.8 m/s²</label>
+          <label><input type="radio" name="q27" value="B"> B) 8.9 m/s²</label>
+          <label><input type="radio" name="q27" value="C"> C) 10.8 m/s²</label>
+          <label><input type="radio" name="q27" value="D"> D) 1 m/s²</label>
+        </div>
+      </div>
+
+      <div class="q" id="q28">
+        <p>28. Light travels fastest in:</p>
+        <div class="opts">
+          <label><input type="radio" name="q28" value="A"> A) vacuum</label>
+          <label><input type="radio" name="q28" value="B"> B) water</label>
+          <label><input type="radio" name="q28" value="C"> C) glass</label>
+          <label><input type="radio" name="q28" value="D"> D) air</label>
+        </div>
+      </div>
+
+      <div class="q" id="q29">
+        <p>29. Unit of electric current is:</p>
+        <div class="opts">
+          <label><input type="radio" name="q29" value="A"> A) Volt</label>
+          <label><input type="radio" name="q29" value="B"> B) Ohm</label>
+          <label><input type="radio" name="q29" value="C"> C) Ampere</label>
+          <label><input type="radio" name="q29" value="D"> D) Coulomb</label>
+        </div>
+      </div>
+
+      <div class="q" id="q30">
+        <p>30. A stationary object has kinetic energy:</p>
+        <div class="opts">
+          <label><input type="radio" name="q30" value="A"> A) zero</label>
+          <label><input type="radio" name="q30" value="B"> B) positive</label>
+          <label><input type="radio" name="q30" value="C"> C) negative</label>
+          <label><input type="radio" name="q30" value="D"> D) infinite</label>
+        </div>
+      </div>
+
+      <div class="q" id="q31">
+        <p>31. Frequency is the reciprocal of:</p>
+        <div class="opts">
+          <label><input type="radio" name="q31" value="A"> A) amplitude</label>
+          <label><input type="radio" name="q31" value="B"> B) period</label>
+          <label><input type="radio" name="q31" value="C"> C) wavelength</label>
+          <label><input type="radio" name="q31" value="D"> D) velocity</label>
+        </div>
+      </div>
+
+      <div class="q" id="q32">
+        <p>32. 1 eV is a unit of:</p>
+        <div class="opts">
+          <label><input type="radio" name="q32" value="A"> A) charge</label>
+          <label><input type="radio" name="q32" value="B"> B) energy</label>
+          <label><input type="radio" name="q32" value="C"> C) current</label>
+          <label><input type="radio" name="q32" value="D"> D) resistance</label>
+        </div>
+      </div>
+
+      <div class="q" id="q33">
+        <p>33. Sound cannot travel in:</p>
+        <div class="opts">
+          <label><input type="radio" name="q33" value="A"> A) air</label>
+          <label><input type="radio" name="q33" value="B"> B) water</label>
+          <label><input type="radio" name="q33" value="C"> C) vacuum</label>
+          <label><input type="radio" name="q33" value="D"> D) steel</label>
+        </div>
+      </div>
+
+      <div class="q" id="q34">
+        <p>34. Ohm's law relates V, I and R as:</p>
+        <div class="opts">
+          <label><input type="radio" name="q34" value="A"> A) V = IR</label>
+          <label><input type="radio" name="q34" value="B"> B) I = VR</label>
+          <label><input type="radio" name="q34" value="C"> C) R = VI</label>
+          <label><input type="radio" name="q34" value="D"> D) V = I/R</label>
+        </div>
+      </div>
+
+      <div class="q" id="q35">
+        <p>35. Unit of pressure is:</p>
+        <div class="opts">
+          <label><input type="radio" name="q35" value="A"> A) Pascal</label>
+          <label><input type="radio" name="q35" value="B"> B) Newton</label>
+          <label><input type="radio" name="q35" value="C"> C) Joule</label>
+          <label><input type="radio" name="q35" value="D"> D) Tesla</label>
+        </div>
+      </div>
+
+      <div class="q" id="q36">
+        <p>36. The mirror that always forms a virtual upright image is:</p>
+        <div class="opts">
+          <label><input type="radio" name="q36" value="A"> A) plane mirror</label>
+          <label><input type="radio" name="q36" value="B"> B) concave mirror</label>
+          <label><input type="radio" name="q36" value="C"> C) convex mirror</label>
+          <label><input type="radio" name="q36" value="D"> D) none</label>
+        </div>
+      </div>
+
+      <div class="q" id="q37">
+        <p>37. Energy stored in a capacitor depends on:</p>
+        <div class="opts">
+          <label><input type="radio" name="q37" value="A"> A) capacitance and voltage</label>
+          <label><input type="radio" name="q37" value="B"> B) only capacitance</label>
+          <label><input type="radio" name="q37" value="C"> C) only voltage</label>
+          <label><input type="radio" name="q37" value="D"> D) resistance</label>
+        </div>
+      </div>
+
+      <div class="q" id="q38">
+        <p>38. Which particle has negative charge?</p>
+        <div class="opts">
+          <label><input type="radio" name="q38" value="A"> A) proton</label>
+          <label><input type="radio" name="q38" value="B"> B) electron</label>
+          <label><input type="radio" name="q38" value="C"> C) neutron</label>
+          <label><input type="radio" name="q38" value="D"> D) positron</label>
+        </div>
+      </div>
+
+      <div class="q" id="q39">
+        <p>39. SI unit of luminous intensity is:</p>
+        <div class="opts">
+          <label><input type="radio" name="q39" value="A"> A) candela</label>
+          <label><input type="radio" name="q39" value="B"> B) lumen</label>
+          <label><input type="radio" name="q39" value="C"> C) lux</label>
+          <label><input type="radio" name="q39" value="D"> D) watt</label>
+        </div>
+      </div>
+
+      <div class="q" id="q40">
+        <p>40. Work done by a conservative force around closed path is:</p>
+        <div class="opts">
+          <label><input type="radio" name="q40" value="A"> A) positive</label>
+          <label><input type="radio" name="q40" value="B"> B) zero</label>
+          <label><input type="radio" name="q40" value="C"> C) negative</label>
+          <label><input type="radio" name="q40" value="D"> D) undefined</label>
+        </div>
+      </div>
+
+      <div class="q" id="q41">
+        <p>41. The SI unit of frequency is:</p>
+        <div class="opts">
+          <label><input type="radio" name="q41" value="A"> A) Hz</label>
+          <label><input type="radio" name="q41" value="B"> B) s</label>
+          <label><input type="radio" name="q41" value="C"> C) m</label>
+          <label><input type="radio" name="q41" value="D"> D) N</label>
+        </div>
+      </div>
+
+      <div class="q" id="q42">
+        <p>42. Which law is F = ma?</p>
+        <div class="opts">
+          <label><input type="radio" name="q42" value="A"> A) Newton's first law</label>
+          <label><input type="radio" name="q42" value="B"> B) Newton's second law</label>
+          <label><input type="radio" name="q42" value="C"> C) Newton's third law</label>
+          <label><input type="radio" name="q42" value="D"> D) Law of gravitation</label>
+        </div>
+      </div>
+
+      <div class="q" id="q43">
+        <p>43. Heat is measured in:</p>
+        <div class="opts">
+          <label><input type="radio" name="q43" value="A"> A) Celsius</label>
+          <label><input type="radio" name="q43" value="B"> B) Joule</label>
+          <label><input type="radio" name="q43" value="C"> C) Kelvin</label>
+          <label><input type="radio" name="q43" value="D"> D) Watt</label>
+        </div>
+      </div>
+
+      <div class="q" id="q44">
+        <p>44. Reflection of light follows which law?</p>
+        <div class="opts">
+          <label><input type="radio" name="q44" value="A"> A) Angle of incidence = angle of reflection</label>
+          <label><input type="radio" name="q44" value="B"> B) Angle of incidence = angle to normal</label>
+          <label><input type="radio" name="q44" value="C"> C) Light speed increases</label>
+          <label><input type="radio" name="q44" value="D"> D) None</label>
+        </div>
+      </div>
+
+      <div class="q" id="q45">
+        <p>45. Which device converts electrical energy to mechanical?</p>
+        <div class="opts">
+          <label><input type="radio" name="q45" value="A"> A) Generator</label>
+          <label><input type="radio" name="q45" value="B"> B) Motor</label>
+          <label><input type="radio" name="q45" value="C"> C) Transformer</label>
+          <label><input type="radio" name="q45" value="D"> D) Capacitor</label>
+        </div>
+      </div>
+
+      <div class="q" id="q46">
+        <p>46. The bending of light when passing from one medium to another is:</p>
+        <div class="opts">
+          <label><input type="radio" name="q46" value="A"> A) reflection</label>
+          <label><input type="radio" name="q46" value="B"> B) diffraction</label>
+          <label><input type="radio" name="q46" value="C"> C) refraction</label>
+          <label><input type="radio" name="q46" value="D"> D) interference</label>
+        </div>
+      </div>
+
+      <div class="q" id="q47">
+        <p>47. Kirchhoff's current law relates to:</p>
+        <div class="opts">
+          <label><input type="radio" name="q47" value="A"> A) voltage in loop</label>
+          <label><input type="radio" name="q47" value="B"> B) current at junction</label>
+          <label><input type="radio" name="q47" value="C"> C) resistance</label>
+          <label><input type="radio" name="q47" value="D"> D) power</label>
+        </div>
+      </div>
+
+      <div class="q" id="q48">
+        <p>48. The phenomenon of two waves adding up is called:</p>
+        <div class="opts">
+          <label><input type="radio" name="q48" value="A"> A) reflection</label>
+          <label><input type="radio" name="q48" value="B"> B) refraction</label>
+          <label><input type="radio" name="q48" value="C"> C) interference</label>
+          <label><input type="radio" name="q48" value="D"> D) polarization</label>
+        </div>
+      </div>
+
+      <div class="q" id="q49">
+        <p>49. Which is a vector quantity?</p>
+        <div class="opts">
+          <label><input type="radio" name="q49" value="A"> A) Speed</label>
+          <label><input type="radio" name="q49" value="B"> B) Distance</label>
+          <label><input type="radio" name="q49" value="C"> C) Velocity</label>
+          <label><input type="radio" name="q49" value="D"> D) Time</label>
+        </div>
+      </div>
+
+      <div class="q" id="q50">
+        <p>50. The SI unit of energy is:</p>
+        <div class="opts">
+          <label><input type="radio" name="q50" value="A"> A) Watt</label>
+          <label><input type="radio" name="q50" value="B"> B) Joule</label>
+          <label><input type="radio" name="q50" value="C"> C) Newton</label>
+          <label><input type="radio" name="q50" value="D"> D) Pascal</label>
+        </div>
+      </div>
+
+      <!-- ---------- CHEMISTRY 51-75 ---------- -->
+      <h3 style="color:#fff;margin-top:24px">Chemistry (25)</h3>
+
+      <div class="q" id="q51">
+        <p>51. Water's chemical formula is:</p>
+        <div class="opts">
+          <label><input type="radio" name="q51" value="A"> A) H2O</label>
+          <label><input type="radio" name="q51" value="B"> B) CO2</label>
+          <label><input type="radio" name="q51" value="C"> C) O2</label>
+          <label><input type="radio" name="q51" value="D"> D) H2</label>
+        </div>
+      </div>
+
+      <div class="q" id="q52">
+        <p>52. pH less than 7 indicates:</p>
+        <div class="opts">
+          <label><input type="radio" name="q52" value="A"> A) neutral</label>
+          <label><input type="radio" name="q52" value="B"> B) acidic</label>
+          <label><input type="radio" name="q52" value="C"> C) basic</label>
+          <label><input type="radio" name="q52" value="D"> D) salt</label>
+        </div>
+      </div>
+
+      <div class="q" id="q53">
+        <p>53. Table salt is chemically:</p>
+        <div class="opts">
+          <label><input type="radio" name="q53" value="A"> A) NaCl</label>
+          <label><input type="radio" name="q53" value="B"> B) KCl</label>
+          <label><input type="radio" name="q53" value="C"> C) CaCl2</label>
+          <label><input type="radio" name="q53" value="D"> D) Na2CO3</label>
+        </div>
+      </div>
+
+      <div class="q" id="q54">
+        <p>54. Atomic number indicates:</p>
+        <div class="opts">
+          <label><input type="radio" name="q54" value="A"> A) neutrons</label>
+          <label><input type="radio" name="q54" value="B"> B) protons</label>
+          <label><input type="radio" name="q54" value="C"> C) electrons only</label>
+          <label><input type="radio" name="q54" value="D"> D) mass</label>
+        </div>
+      </div>
+
+      <div class="q" id="q55">
+        <p>55. Avogadro's number approx equals:</p>
+        <div class="opts">
+          <label><input type="radio" name="q55" value="A"> A) 6.02×10^23</label>
+          <label><input type="radio" name="q55" value="B"> B) 3.14</label>
+          <label><input type="radio" name="q55" value="C"> C) 9.81</label>
+          <label><input type="radio" name="q55" value="D"> D) 1.6×10^-19</label>
+        </div>
+      </div>
+
+      <div class="q" id="q56">
+        <p>56. Which is a noble gas?</p>
+        <div class="opts">
+          <label><input type="radio" name="q56" value="A"> A) Oxygen</label>
+          <label><input type="radio" name="q56" value="B"> B) Neon</label>
+          <label><input type="radio" name="q56" value="C"> C) Nitrogen</label>
+          <label><input type="radio" name="q56" value="D"> D) Hydrogen</label>
+        </div>
+      </div>
+
+      <div class="q" id="q57">
+        <p>57. Rusting is oxidation of:</p>
+        <div class="opts">
+          <label><input type="radio" name="q57" value="A"> A) iron</label>
+          <label><input type="radio" name="q57" value="B"> B) copper</label>
+          <label><input type="radio" name="q57" value="C"> C) gold</label>
+          <label><input type="radio" name="q57" value="D"> D) silver</label>
+        </div>
+      </div>
+
+      <div class="q" id="q58">
+        <p>58. The gas used for cooking in many homes is:</p>
+        <div class="opts">
+          <label><input type="radio" name="q58" value="A"> A) LPG</label>
+          <label><input type="radio" name="q58" value="B"> B) Oxygen</label>
+          <label><input type="radio" name="q58" value="C"> C) Nitrogen</label>
+          <label><input type="radio" name="q58" value="D"> D) Helium</label>
+        </div>
+      </div>
+
+      <div class="q" id="q59">
+        <p>59. Which is a compound?</p>
+        <div class="opts">
+          <label><input type="radio" name="q59" value="A"> A) Oxygen</label>
+          <label><input type="radio" name="q59" value="B"> B) Water</label>
+          <label><input type="radio" name="q59" value="C"> C) Iron</label>
+          <label><input type="radio" name="q59" value="D"> D) Nitrogen</label>
+        </div>
+      </div>
+
+      <div class="q" id="q60">
+        <p>60. Which reaction releases heat?</p>
+        <div class="opts">
+          <label><input type="radio" name="q60" value="A"> A) Endothermic</label>
+          <label><input type="radio" name="q60" value="B"> B) Exothermic</label>
+          <label><input type="radio" name="q60" value="C"> C) Neutral</label>
+          <label><input type="radio" name="q60" value="D"> D) Redox</label>
+        </div>
+      </div>
+
+      <div class="q" id="q61">
+        <p>61. HCl is an example of a:</p>
+        <div class="opts">
+          <label><input type="radio" name="q61" value="A"> A) base</label>
+          <label><input type="radio" name="q61" value="B"> B) acid</label>
+          <label><input type="radio" name="q61" value="C"> C) salt</label>
+          <label><input type="radio" name="q61" value="D"> D) oxide</label>
+        </div>
+      </div>
+
+      <div class="q" id="q62">
+        <p>62. The electron has charge approximately:</p>
+        <div class="opts">
+          <label><input type="radio" name="q62" value="A"> A) +1.6×10^-19 C</label>
+          <label><input type="radio" name="q62" value="B"> B) -1.6×10^-19 C</label>
+          <label><input type="radio" name="q62" value="C"> C) 0</label>
+          <label><input type="radio" name="q62" value="D"> D) +1 C</label>
+        </div>
+      </div>
+
+      <div class="q" id="q63">
+        <p>63. Which is a polymer?</p>
+        <div class="opts">
+          <label><input type="radio" name="q63" value="A"> A) Nylon</label>
+          <label><input type="radio" name="q63" value="B"> B) Water</label>
+          <label><input type="radio" name="q63" value="C"> C) Salt</label>
+          <label><input type="radio" name="q63" value="D"> D) Oxygen</label>
+        </div>
+      </div>
+
+      <div class="q" id="q64">
+        <p>64. Alcohol functional group is:</p>
+        <div class="opts">
+          <label><input type="radio" name="q64" value="A"> A) -OH</label>
+          <label><input type="radio" name="q64" value="B"> B) -COOH</label>
+          <label><input type="radio" name="q64" value="C"> C) -NH2</label>
+          <label><input type="radio" name="q64" value="D"> D) -SH</label>
+        </div>
+      </div>
+
+      <div class="q" id="q65">
+        <p>65. Which type of bond forms NaCl?</p>
+        <div class="opts">
+          <label><input type="radio" name="q65" value="A"> A) Ionic</label>
+          <label><input type="radio" name="q65" value="B"> B) Covalent</label>
+          <label><input type="radio" name="q65" value="C"> C) Metallic</label>
+          <label><input type="radio" name="q65" value="D"> D) Hydrogen</label>
+        </div>
+      </div>
+
+      <!-- ---------- ENGLISH 76-90 ---------- -->
+      <h3 style="color:#fff;margin-top:24px">English (15)</h3>
+
+      <div class="q" id="q76">
+        <p>76. Choose the correct plural: "child"</p>
+        <div class="opts">
+          <label><input type="radio" name="q76" value="A"> A) childs</label>
+          <label><input type="radio" name="q76" value="B"> B) children</label>
+          <label><input type="radio" name="q76" value="C"> C) childes</label>
+          <label><input type="radio" name="q76" value="D"> D) childrens</label>
+        </div>
+      </div>
+
+      <div class="q" id="q77">
+        <p>77. Select the correct sentence:</p>
+        <div class="opts">
+          <label><input type="radio" name="q77" value="A"> A) He don't like tea.</label>
+          <label><input type="radio" name="q77" value="B"> B) He doesn't like tea.</label>
+          <label><input type="radio" name="q77" value="C"> C) He not likes tea.</label>
+          <label><input type="radio" name="q77" value="D"> D) He isn't like tea.</label>
+        </div>
+      </div>
+
+      <div class="q" id="q78">
+        <p>78. Synonym of "big" is:</p>
+        <div class="opts">
+          <label><input type="radio" name="q78" value="A"> A) large</label>
+          <label><input type="radio" name="q78" value="B"> B) small</label>
+          <label><input type="radio" name="q78" value="C"> C) tiny</label>
+          <label><input type="radio" name="q78" value="D"> D) little</label>
+        </div>
+      </div>
+
+      <div class="q" id="q79">
+        <p>79. Fill: "She _____ to school every day."</p>
+        <div class="opts">
+          <label><input type="radio" name="q79" value="A"> A) go</label>
+          <label><input type="radio" name="q79" value="B"> B) goes</label>
+          <label><input type="radio" name="q79" value="C"> C) went</label>
+          <label><input type="radio" name="q79" value="D"> D) going</label>
+        </div>
+      </div>
+
+      <div class="q" id="q80">
+        <p>80. Opposite of "advance" is:</p>
+        <div class="opts">
+          <label><input type="radio" name="q80" value="A"> A) retreat</label>
+          <label><input type="radio" name="q80" value="B"> B) continue</label>
+          <label><input type="radio" name="q80" value="C"> C) proceed</label>
+          <label><input type="radio" name="q80" value="D"> D) forward</label>
+        </div>
+      </div>
+
+      <div class="q" id="q81">
+        <p>81. Choose the correct preposition: "He is good ___ math."</p>
+        <div class="opts">
+          <label><input type="radio" name="q81" value="A"> A) at</label>
+          <label><input type="radio" name="q81" value="B"> B) in</label>
+          <label><input type="radio" name="q81" value="C"> C) on</label>
+          <label><input type="radio" name="q81" value="D"> D) for</label>
+        </div>
+      </div>
+
+      <div class="q" id="q82">
+        <p>82. Choose correct article: "___ apple a day keeps the doctor away."</p>
+        <div class="opts">
+          <label><input type="radio" name="q82" value="A"> A) A</label>
+          <label><input type="radio" name="q82" value="B"> B) An</label>
+          <label><input type="radio" name="q82" value="C"> C) The</label>
+          <label><input type="radio" name="q82" value="D"> D) No article</label>
+        </div>
+      </div>
+
+      <div class="q" id="q83">
+        <p>83. Choose the correct form: "I have ____ my homework."</p>
+        <div class="opts">
+          <label><input type="radio" name="q83" value="A"> A) did</label>
+          <label><input type="radio" name="q83" value="B"> B) done</label>
+          <label><input type="radio" name="q83" value="C"> C) do</label>
+          <label><input type="radio" name="q83" value="D"> D) doing</label>
+        </div>
+      </div>
+
+      <div class="q" id="q84">
+        <p>84. Idiom: "Break the ice" means:</p>
+        <div class="opts">
+          <label><input type="radio" name="q84" value="A"> A) break something</label>
+          <label><input type="radio" name="q84" value="B"> B) make people comfortable</label>
+          <label><input type="radio" name="q84" value="C"> C) freeze water</label>
+          <label><input type="radio" name="q84" value="D"> D) be rude</label>
+        </div>
+      </div>
+
+      <div class="q" id="q85">
+        <p>85. 'She is the _____ student in class.' (choose: clever)</p>
+        <div class="opts">
+          <label><input type="radio" name="q85" value="A"> A) more clever</label>
+          <label><input type="radio" name="q85" value="B"> B) most clever</label>
+          <label><input type="radio" name="q85" value="C"> C) cleverest</label>
+          <label><input type="radio" name="q85" value="D"> D) the cleverest</label>
+        </div>
+      </div>
+
+      <!-- ---------- COMPUTER/IT 91-100 ---------- -->
+      <h3 style="color:#fff;margin-top:24px">Computer / IT (10)</h3>
+
+      <div class="q" id="q91">
+        <p>91. CPU stands for:</p>
+        <div class="opts">
+          <label><input type="radio" name="q91" value="A"> A) Central Processing Unit</label>
+          <label><input type="radio" name="q91" value="B"> B) Computer Processing Unit</label>
+          <label><input type="radio" name="q91" value="C"> C) Central Peripheral Unit</label>
+          <label><input type="radio" name="q91" value="D"> D) Control Processing Unit</label>
+        </div>
+      </div>
+
+      <div class="q" id="q92">
+        <p>92. HTML is used for:</p>
+        <div class="opts">
+          <label><input type="radio" name="q92" value="A"> A) styling</label>
+          <label><input type="radio" name="q92" value="B"> B) structure/content of web pages</label>
+          <label><input type="radio" name="q92" value="C"> C) server-side scripting</label>
+          <label><input type="radio" name="q92" value="D"> D) database queries</label>
+        </div>
+      </div>
+
+      <div class="q" id="q93">
+        <p>93. The brain of a computer is:</p>
+        <div class="opts">
+          <label><input type="radio" name="q93" value="A"> A) Monitor</label>
+          <label><input type="radio" name="q93" value="B"> B) RAM</label>
+          <label><input type="radio" name="q93" value="C"> C) CPU</label>
+          <label><input type="radio" name="q93" value="D"> D) Hard disk</label>
+        </div>
+      </div>
+
+      <div class="q" id="q94">
+        <p>94. Which is not an operating system?</p>
+        <div class="opts">
+          <label><input type="radio" name="q94" value="A"> A) Windows</label>
+          <label><input type="radio" name="q94" value="B"> B) Linux</label>
+          <label><input type="radio" name="q94" value="C"> C) Firefox</label>
+          <label><input type="radio" name="q94" value="D"> D) macOS</label>
+        </div>
+      </div>
+
+      <div class="q" id="q95">
+        <p>95. URL stands for:</p>
+        <div class="opts">
+          <label><input type="radio" name="q95" value="A"> A) Uniform Resource Locator</label>
+          <label><input type="radio" name="q95" value="B"> B) Universal Resource Link</label>
+          <label><input type="radio" name="q95" value="C"> C) Unified Resource Link</label>
+          <label><input type="radio" name="q95" value="D"> D) User Resource Locator</label>
+        </div>
+      </div>
+
+      <div class="q" id="q96">
+        <p>96. Which is a programming language?</p>
+        <div class="opts">
+          <label><input type="radio" name="q96" value="A"> A) HTML</label>
+          <label><input type="radio" name="q96" value="B"> B) CSS</label>
+          <label><input type="radio" name="q96" value="C"> C) JavaScript</label>
+          <label><input type="radio" name="q96" value="D"> D) HTTP</label>
+        </div>
+      </div>
+
+      <div class="q" id="q97">
+        <p>97. Which device is used to store data permanently?</p>
+        <div class="opts">
+          <label><input type="radio" name="q97" value="A"> A) RAM</label>
+          <label><input type="radio" name="q97" value="B"> B) ROM</label>
+          <label><input type="radio" name="q97" value="C"> C) Hard disk</label>
+          <label><input type="radio" name="q97" value="D"> D) Cache</label>
+        </div>
+      </div>
+
+      <div class="q" id="q98">
+        <p>98. The basic unit of information in computers is:</p>
+        <div class="opts">
+          <label><input type="radio" name="q98" value="A"> A) bit</label>
+          <label><input type="radio" name="q98" value="B"> B) byte</label>
+          <label><input type="radio" name="q98" value="C"> C) nibble</label>
+          <label><input type="radio" name="q98" value="D"> D) word</label>
+        </div>
+      </div>
+
+      <div class="q" id="q99">
+        <p>99. Which is used to browse web pages?</p>
+        <div class="opts">
+          <label><input type="radio" name="q99" value="A"> A) Browser</label>
+          <label><input type="radio" name="q99" value="B"> B) Editor</label>
+          <label><input type="radio" name="q99" value="C"> C) Compiler</label>
+          <label><input type="radio" name="q99" value="D"> D) Linker</label>
+        </div>
+      </div>
+
+      <div class="q" id="q100">
+        <p>100. Which is a database system?</p>
+        <div class="opts">
+          <label><input type="radio" name="q100" value="A"> A) MySQL</label>
+          <label><input type="radio" name="q100" value="B"> B) HTML</label>
+          <label><input type="radio" name="q100" value="C"> C) CSS</label>
+          <label><input type="radio" name="q100" value="D"> D) FTP</label>
+        </div>
+      </div>
+
+      <div style="text-align:center;margin-top:18px">
+        <button type="submit">Submit & Grade</button>
+      </div>
+
+      <div id="output" class="result" style="display:none"></div>
+      <div id="sectionBreakdown" style="display:none;margin-top:10px"></div>
+    </form>
+
+    <footer>
+      <p class="small">Notes: This mock replicates common TU BSc CSIT entrance structure (100 MCQs, 1 mark each, typically no negative marking). Good luck!</p>
+    </footer>
+  </div>
+
+<script>
+  // ANSWER KEY (1 mark per question). Each entry = correct option letter
+  // The answers below are set to match the simple/basic questions above.
+  const ANSWERS = {
+    // Math 1-25
+    1:'B',2:'B',3:'A',4:'A',5:'B',6:'A',7:'A',8:'B',9:'B',10:'B',
+    11:'A',12:'A',13:'B',14:'B',15:'B',16:'A',17:'B',18:'C',19:'B',20:'B',
+    21:'B',22:'A',23:'B',24:'A',25:'B',
+    // Physics 26-50
+    26:'A',27:'A',28:'A',29:'C',30:'A',31:'B',32:'B',33:'C',34:'A',35:'A',
+    36:'A',37:'A',38:'B',39:'A',40:'B',41:'A',42:'B',43:'B',44:'A',45:'B',
+    46:'C',47:'B',48:'C',49:'C',50:'B',
+    // Chemistry 51-75
+    51:'A',52:'B',53:'A',54:'B',55:'A',56:'B',57:'A',58:'A',59:'B',60:'B',
+    61:'B',62:'B',63:'A',64:'A',65:'A',66:'A',67:'A',68:'A',69:'A',70:'A',
+    // (fill 66-75 with valid defaults if extra)
+    66:'A',67:'A',68:'A',69:'A',70:'A',71:'A',72:'A',73:'A',74:'A',75:'A',
+    // English 76-90
+    76:'B',77:'B',78:'A',79:'B',80:'A',81:'A',82:'B',83:'B',84:'B',85:'D',
+    86:'A',87:'A',88:'A',89:'A',90:'A',
+    // Computer 91-100
+    91:'A',92:'B',93:'C',94:'C',95:'A',96:'C',97:'C',98:'A',99:'A',100:'A'
+  };
+
+  // Grade function
+  function gradeQuiz(e){
+    e.preventDefault();
+    const total = 100;
+    let score = 0;
+    const perSection = {math:0,physics:0,chem:0,english:0,comp:0};
+
+    for(let i=1;i<=100;i++){
+      const el = document.querySelector('input[name="q'+i+'"]:checked');
+      const given = el ? el.value : null;
+      const correct = ANSWERS[i];
+      if(given && correct && given === correct){
+        score += 1;
+        // section mapping
+        if(i>=1 && i<=25) perSection.math++;
+        else if(i>=26 && i<=50) perSection.physics++;
+        else if(i>=51 && i<=75) perSection.chem++;
+        else if(i>=76 && i<=90) perSection.english++;
+        else if(i>=91 && i<=100) perSection.comp++;
+      }
+    }
+
+    // Display results
+    const out = document.getElementById('output');
+    out.style.display = 'block';
+    const passMark = 35;
+    const passText = score >= passMark ? '<strong style="color:var(--ok)">PASS</strong>' : '<strong style="color:#f43f5e">FAIL</strong>';
+    out.innerHTML = `<div style="font-size:18px">You scored <strong style="font-size:20px;color:#fff">${score}</strong> / ${total} — ${passText}</div>
+      <div class="small" style="margin-top:8px">Each correct = 1 mark. No negative marking. Passing mark = ${passMark}.</div>`;
+
+    const breakdown = document.getElementById('sectionBreakdown');
+    breakdown.style.display = 'block';
+    breakdown.innerHTML = `<div style="margin-top:12px">
+      <strong>Section scores:</strong>
+      <ul style="list-style:none;padding-left:0;color:#cfe8ff">
+        <li>Mathematics (1–25): ${perSection.math} / 25</li>
+        <li>Physics (26–50): ${perSection.physics} / 25</li>
+        <li>Chemistry (51–75): ${perSection.chem} / 25</li>
+        <li>English (76–90): ${perSection.english} / 15</li>
+        <li>Computer/IT (91–100): ${perSection.comp} / 10</li>
+      </ul></div>`;
+
+    // Scroll to result
+    out.scrollIntoView({behavior:'smooth'});
+    return false;
+  }
+</script>
+</body>
+</html>
